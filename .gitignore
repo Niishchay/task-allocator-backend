@@ -1,0 +1,12 @@
+# Ignore compiled binaries
+target/
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore configuration files with sensitive information
+application-*.properties
