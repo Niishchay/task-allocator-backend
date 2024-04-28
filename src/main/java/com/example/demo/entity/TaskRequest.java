@@ -15,9 +15,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class TaskRequest {
 	
@@ -37,4 +34,69 @@ public class TaskRequest {
 	private RequestStatus requestStatus;
 	
 	private LocalDateTime requestDate;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getRequesterId() {
+		return requesterId;
+	}
+
+	public void setRequesterId(Long requesterId) {
+		this.requesterId = requesterId;
+	}
+
+	public Long getAssigneeId() {
+		return assigneeId;
+	}
+
+	public void setAssigneeId(Long assigneeId) {
+		this.assigneeId = assigneeId;
+	}
+
+	public Long getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(Long taskId) {
+		this.taskId = taskId;
+	}
+
+	public RequestStatus getRequestStatus() {
+		return requestStatus;
+	}
+
+	public void setRequestStatus(RequestStatus requestStatus) {
+		this.requestStatus = requestStatus;
+	}
+
+	public LocalDateTime getRequestDate() {
+		return requestDate;
+	}
+
+	public void setRequestDate(LocalDateTime requestDate) {
+		this.requestDate = requestDate;
+	}
+
+	public TaskRequest(Long id, @NotNull Long requesterId, @NotNull Long assigneeId, Long taskId,
+			RequestStatus requestStatus, LocalDateTime requestDate) {
+		super();
+		this.id = id;
+		this.requesterId = requesterId;
+		this.assigneeId = assigneeId;
+		this.taskId = taskId;
+		this.requestStatus = requestStatus;
+		this.requestDate = requestDate;
+	}
+
+	public TaskRequest() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 }

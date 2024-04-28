@@ -16,9 +16,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class User {
 	@Id
@@ -40,4 +37,62 @@ public class User {
 	
 	@Enumerated(EnumType.STRING)
 	private UserStatus status;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public UserStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(UserStatus status) {
+		this.status = status;
+	}
+
+	public User(Long id,
+			@NotNull(message = "username is mandatory field") @Size(min = 4, max = 12, message = "username should be between 4-12 characters") String username,
+			@NotNull(message = "password is mandatory field") @Size(min = 4, max = 8, message = "password should be between 4-8 characters") String password,
+			Role role, UserStatus status) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.role = role;
+		this.status = status;
+	}
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 }
